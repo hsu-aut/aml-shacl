@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+ 	<modelVersion>4.0.0</modelVersion>
+ 	
+	<parent>
+		<groupId>de.hsu-hh.aut.aml-shacl</groupId>
+		<artifactId>de.hsu-hh.aut.aml-shacl.aml-shacl-parent</artifactId>
+		<version>${revision}</version>
+	</parent>
+	
+	<artifactId>de.hsu-hh.aut.aml-shacl.aml-shacl-lib</artifactId>
+
+  	<name>AML SHACL Lib</name>
+	<description>An application that generates SHACL constraints with an LLM and validates an AML model against these constraints</description>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<source>21</source>
+					<target>21</target>
+					<!-- <release>14</release> -->
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.2.1</version>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<dependencies>
+		<dependency>
+			<groupId>io.github.aljoshakoecher</groupId>
+			<artifactId>io.github.aljoshakoecher.aml2owl-lib</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>io.github.cdimascio</groupId>
+		    <artifactId>dotenv-java</artifactId>
+		    <version>3.0.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.jena</groupId>
+		    <artifactId>apache-jena-libs</artifactId>
+		    <version>4.10.0</version> <!-- oder neuere Version -->
+		    <type>pom</type>
+		</dependency>
+		<dependency>
+		    <groupId>com.google.code.gson</groupId>
+		    <artifactId>gson</artifactId>
+		    <version>2.10.1</version>
+		</dependency>
+	</dependencies>
+</project>

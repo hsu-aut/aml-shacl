@@ -1,0 +1,3 @@
+Generate a SHACL shape for the following natural-language constraint. Please make sure to use proper IRIs and define all prefixes so that the SHACL constraints are valid RDF. Return only the SHACL shape without ```, just the plain string.
+
+${constraint}
