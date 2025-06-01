@@ -1,5 +1,7 @@
 package core;
 
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.io.StringReader;
 import java.nio.file.Path;
 import java.util.List;
@@ -51,6 +53,13 @@ public class AmlTextConstraintValidator {
         Model shapeModel = ModelFactory.createDefaultModel();
         for (String shapeTurtle : shapeStrings) {
             shapeModel.read(new StringReader(shapeTurtle), null, "TURTLE");
+        }
+        
+        // Store shapes in file (mostly for debugging)
+        try (OutputStream out = new FileOutputStream("generated-shapes.ttl")) {
+            shapeModel.write(out, "TURTLE");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         logger.info("SHACL shapes generated successfully.");
