@@ -11,7 +11,21 @@ It generates SHACL shapes for textual constraints and validates these shapes aga
 ## How to Use
 
 ### As a Command-Line Tool
-documentation coming sooon...
+Download the latest release version (the .jar file) and open a shell inside the folder that contains the jar. The tool can the be started using the following command:
+
+```
+java -jar '.\AML SHACL CLI-0.0.2.jar' validate "<AML file to validate>" "<File with textual constraints>"
+```
+
+Make sure to use the correct jar name, i.e., the version you downloaded. And the constraint file may have multiple constraints, but they must be separated by empty lines like so:
+
+```
+constraint 1....
+
+constraint 2...
+
+constraint 3...
+```
 
 
 ## Tests
